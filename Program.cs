@@ -7,20 +7,20 @@
 {2, 3, 9, 8, 0}
 
 };
-int[,] m2 = new int[5, 5]
+for (int k = 0; k < 5; k++)
 {
-{2, 4, 9, 1, 3},
-{6, 3, 2, 0, 5},
-{1, 5, 7, 4, 9},
-{8, 9, 2, 3, 1},
-{2, 3, 9, 8, 0}
-
-};
-for (int i = 0; i < 5; i++)
-{
-    for (int j = 0; j < 5; j++)
+    for (int i = 0; i < 5; i++)
     {
-        m[i, j] *= m2[i, j];
+        for (int j = 0; j < 4; j++)
+        {
+            if (m[i, j] > m[i, j + 1])
+            {
+                int temp = m[i, j];
+                m[i, j] = m[i, j + 1];
+                m[i, j + 1] = temp;
+            }
+
+        }
     }
 }
 for (int i = 0; i < 5; i++)
